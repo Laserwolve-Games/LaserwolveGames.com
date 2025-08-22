@@ -11,29 +11,26 @@ import HeroSection from '@/components/HeroSection'
 import GameCard from '@/components/GameCard'
 import TeamMember from '@/components/TeamMember'
 import Logo from '@/components/Logo'
+import DaggerQuestLogo from '@/assets/images/DaggerQuestLogo.webp'
+import PlainsOfShinarLogo from '@/assets/images/PlainsOfShinarLogo.webp'
 
 function App() {
   const games = [
     {
-      title: "Neon Runners",
-      description: "A high-speed cyberpunk racing game with stunning visual effects",
-      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop",
-      tags: ["Unity", "C#", "Multiplayer"],
-      status: "Released"
+      title: "DaggerQuest",
+      description: "A thrilling adventure RPG where heroes embark on epic quests with mystical daggers as their primary weapons",
+      image: DaggerQuestLogo,
+      tags: ["RPG", "Adventure", "Fantasy"],
+      status: "In Development",
+      github: "https://github.com/Laserwolve-Games/DaggerQuest"
     },
     {
-      title: "Stellar Conquest",
-      description: "Epic space strategy game with real-time combat and exploration",
-      image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop",
-      tags: ["Unreal", "C++", "Strategy"],
-      status: "In Development"
-    },
-    {
-      title: "Mystic Realms",
-      description: "Fantasy RPG featuring immersive storytelling and magical combat",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      tags: ["Unity", "C#", "RPG"],
-      status: "Coming Soon"
+      title: "Plains of Shinar",
+      description: "An immersive strategy game set in ancient biblical lands, featuring city building and civilization management",
+      image: PlainsOfShinarLogo,
+      tags: ["Strategy", "Historical", "City Builder"],
+      status: "In Development",
+      github: "https://github.com/Laserwolve-Games/PlainsOfShinar"
     }
   ]
 
@@ -85,7 +82,7 @@ function App() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {games.map((game, index) => (
               <GameCard key={game.title} game={game} index={index} />
             ))}

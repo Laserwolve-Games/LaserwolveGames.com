@@ -10,6 +10,7 @@ interface Game {
   image: string
   tags: string[]
   status: string
+  github?: string
 }
 
 interface GameCardProps {
@@ -39,11 +40,11 @@ export default function GameCard({ game, index }: GameCardProps) {
       whileHover={{ y: -10 }}
     >
       <Card className="group overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 hover:glow-blue transition-all duration-500 hover:scale-105">
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden bg-muted/20">
           <motion.img
             src={game.image}
             alt={game.title}
-            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-48 object-contain p-6 transition-transform duration-500 group-hover:scale-110"
             whileHover={{ scale: 1.1 }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
@@ -93,9 +94,10 @@ export default function GameCard({ game, index }: GameCardProps) {
               variant="outline" 
               size="sm" 
               className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
+              onClick={() => game.github && window.open(game.github, '_blank')}
             >
               <ExternalLink className="mr-2" size={16} />
-              Learn More
+              View on GitHub
             </Button>
           </motion.div>
         </CardContent>

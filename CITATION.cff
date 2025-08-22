@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "LaserwolveGames.com"
+abstract: "The official website for Laserwolve Games, a cutting-edge game development studio. Built with modern web technologies including React, TypeScript, and Spark framework."
+authors:
+  - family-names: "Laserwolve Games"
+    email: "contact@laserwolvegames.com"
+repository-code: "https://github.com/Laserwolve-Games/LaserwolveGames.com"
+url: "https://laserwolvegames.com"
+license: MIT
+keywords:
+  - "website"
+  - "portfolio"
+  - "game-studio"
+  - "react"
+  - "typescript"
+  - "spark"
+  - "vite"
+  - "corporate-website"
+version: "1.0.0"
+date-released: "2025-08-20"
+preferred-citation:
+  type: software
+  title: "LaserwolveGames.com: Official Studio Website"
+  authors:
+    - family-names: "Laserwolve Games"
+      email: "contact@laserwolvegames.com"
+  repository-code: "https://github.com/Laserwolve-Games/LaserwolveGames.com"
+  url: "https://laserwolvegames.com"
+  version: "1.0.0"
+  date-released: "2025-08-20"
+  license: MIT

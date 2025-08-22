@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowDown, Sparkle } from '@phosphor-icons/react'
+import Logo from '@/components/Logo'
 
 export default function HeroSection() {
   return (
@@ -10,8 +11,17 @@ export default function HeroSection() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-8 flex flex-col items-center"
         >
+          <motion.div
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="mb-6"
+          >
+            <Logo size={150} className="glow-blue" />
+          </motion.div>
+          
           <motion.h1 
             className="cinzel text-6xl md:text-8xl lg:text-9xl font-black text-gradient mb-4"
             animate={{ 

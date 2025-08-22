@@ -10,6 +10,7 @@ import ParticleBackground from '@/components/ParticleBackground'
 import HeroSection from '@/components/HeroSection'
 import GameCard from '@/components/GameCard'
 import TeamMember from '@/components/TeamMember'
+import Logo from '@/components/Logo'
 
 function App() {
   const games = [
@@ -252,14 +253,17 @@ function App() {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="mb-6 md:mb-0"
+              className="mb-6 md:mb-0 flex items-center gap-4"
             >
-              <h3 className="cinzel text-2xl font-bold text-gradient mb-2">
-                Laserwolve Games
-              </h3>
-              <p className="grenze text-muted-foreground">
-                Crafting the future of gaming
-              </p>
+              <Logo size={60} />
+              <div>
+                <h3 className="cinzel text-2xl font-bold text-gradient mb-2">
+                  Laserwolve Games
+                </h3>
+                <p className="grenze text-muted-foreground">
+                  Crafting the future of gaming
+                </p>
+              </div>
             </motion.div>
             
             <motion.div 

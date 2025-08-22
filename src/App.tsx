@@ -76,10 +76,10 @@ function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="orbitron text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
               Our Games
             </h2>
-            <p className="inter text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
               Pushing the boundaries of interactive entertainment with cutting-edge technology and innovative gameplay
             </p>
           </motion.div>
@@ -105,10 +105,10 @@ function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="orbitron text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
               Our Services
             </h2>
-            <p className="inter text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
               From concept to completion, we deliver exceptional gaming experiences
             </p>
           </motion.div>
@@ -136,8 +136,8 @@ function App() {
                     >
                       <service.icon size={32} className="text-primary" />
                     </motion.div>
-                    <h3 className="orbitron text-xl font-bold mb-4">{service.title}</h3>
-                    <p className="inter text-muted-foreground">{service.desc}</p>
+                    <h3 className="cinzel text-xl font-bold mb-4">{service.title}</h3>
+                    <p className="grenze text-muted-foreground">{service.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -159,10 +159,10 @@ function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="orbitron text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
               Meet the Team
             </h2>
-            <p className="inter text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
               Talented creators passionate about crafting extraordinary gaming experiences
             </p>
           </motion.div>
@@ -188,10 +188,10 @@ function App() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="orbitron text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
               Get In Touch
             </h2>
-            <p className="inter text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
               Ready to bring your gaming vision to life? Let's create something extraordinary together
             </p>
           </motion.div>
@@ -206,14 +206,14 @@ function App() {
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="inter font-medium text-sm mb-2 block">Name</label>
+                      <label className="grenze font-medium text-sm mb-2 block">Name</label>
                       <Input 
                         placeholder="Your name" 
                         className="bg-background/50 border-border/50 focus:border-primary focus:glow-blue"
                       />
                     </div>
                     <div>
-                      <label className="inter font-medium text-sm mb-2 block">Email</label>
+                      <label className="grenze font-medium text-sm mb-2 block">Email</label>
                       <Input 
                         type="email" 
                         placeholder="your@email.com" 
@@ -222,7 +222,7 @@ function App() {
                     </div>
                   </div>
                   <div>
-                    <label className="inter font-medium text-sm mb-2 block">Project Details</label>
+                    <label className="grenze font-medium text-sm mb-2 block">Project Details</label>
                     <Textarea 
                       placeholder="Tell us about your project..." 
                       rows={5}
@@ -254,10 +254,10 @@ function App() {
               whileInView={{ opacity: 1, x: 0 }}
               className="mb-6 md:mb-0"
             >
-              <h3 className="orbitron text-2xl font-bold text-gradient mb-2">
+              <h3 className="cinzel text-2xl font-bold text-gradient mb-2">
                 Laserwolve Games
               </h3>
-              <p className="inter text-muted-foreground">
+              <p className="grenze text-muted-foreground">
                 Crafting the future of gaming
               </p>
             </motion.div>
@@ -290,7 +290,7 @@ function App() {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-center text-muted-foreground inter text-sm"
+            className="text-center text-muted-foreground grenze text-sm"
           >
             © 2024 Laserwolve Games. All rights reserved.
           </motion.div>

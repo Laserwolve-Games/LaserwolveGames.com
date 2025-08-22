@@ -13,7 +13,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <motion.h1 
-            className="orbitron text-6xl md:text-8xl lg:text-9xl font-black text-gradient mb-4"
+            className="cinzel text-6xl md:text-8xl lg:text-9xl font-black text-gradient mb-4"
             animate={{ 
               textShadow: [
                 "0 0 20px rgba(96, 165, 250, 0.5)",
@@ -35,7 +35,7 @@ export default function HeroSection() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="orbitron text-2xl md:text-3xl font-bold text-foreground/90"
+            className="cinzel text-2xl md:text-3xl font-bold text-foreground/90"
           >
             GAMES
           </motion.h2>
@@ -45,7 +45,7 @@ export default function HeroSection() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="inter text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+          className="grenze text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
         >
           Crafting extraordinary gaming experiences with cutting-edge technology, 
           innovative design, and boundless creativity.

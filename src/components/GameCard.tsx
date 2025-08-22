@@ -70,10 +70,10 @@ export default function GameCard({ game, index }: GameCardProps) {
         </div>
         
         <CardContent className="p-6">
-          <h3 className="orbitron text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+          <h3 className="cinzel text-xl font-bold mb-3 group-hover:text-primary transition-colors">
             {game.title}
           </h3>
-          <p className="inter text-muted-foreground mb-4 leading-relaxed">
+          <p className="grenze text-muted-foreground mb-4 leading-relaxed">
             {game.description}
           </p>
           

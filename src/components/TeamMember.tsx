@@ -57,13 +57,13 @@ export default function TeamMember({ member, index }: TeamMemberProps) {
           
           <div className="p-6 text-center">
             <motion.h3 
-              className="orbitron text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+              className="cinzel text-xl font-bold mb-2 group-hover:text-primary transition-colors"
               whileHover={{ scale: 1.05 }}
             >
               {member.name}
             </motion.h3>
             <motion.p 
-              className="inter text-accent font-medium mb-4"
+              className="grenze text-accent font-medium mb-4"
               whileHover={{ scale: 1.02 }}
             >
               {member.role}

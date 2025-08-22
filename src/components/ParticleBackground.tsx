@@ -72,6 +72,7 @@ export default function ParticleBackground() {
         ctx.shadowBlur = 0
       })
 
+      // Draw connections between nearby particles
       for (let i = 0; i < particlesRef.current.length; i++) {
         for (let j = i + 1; j < particlesRef.current.length; j++) {
           const dx = particlesRef.current[i].x - particlesRef.current[j].x
@@ -100,16 +101,18 @@ export default function ParticleBackground() {
     initParticles()
     animate()
 
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       resizeCanvas()
       initParticles()
-    })
+    }
+
+    window.addEventListener('resize', handleResize)
 
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
       }
-      window.removeEventListener('resize', resizeCanvas)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 

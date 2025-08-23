@@ -1,23 +1,45 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# LaserwolveGames.com
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+This is the official website for Laserwolve Games. It is built with modern web technologies to be fast, responsive, and easy to maintain.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## 🚀 Tech Stack
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+*   **Framework**: [React](https://react.dev/)
+*   **Build Tool**: [Vite](https://vitejs.dev/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **Component Library**: [@github/spark](https://github.com/github/spark)
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+## 🛠️ Development
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+To get started with development, follow these steps:
 
-📄 License For Spark Template Resources 
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Laserwolve-Games/LaserwolveGames.com.git
+    cd LaserwolveGames.com
+    ```
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    This will start the development server, typically at `http://localhost:5173`.
+
+## 📜 Available Scripts
+
+In the project directory, you can run the following commands:
+
+*   `npm run dev`: Runs the app in development mode.
+*   `npm run build`: Builds the app for production.
+*   `npm run lint`: Lints the code for errors.
+*   `npm run preview`: Previews the production build locally.
+
+## 📄 License
+
+This project is licensed under the terms of the MIT license.

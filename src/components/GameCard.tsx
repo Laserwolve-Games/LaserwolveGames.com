@@ -1,16 +1,18 @@
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Play } from '@phosphor-icons/react'
+import { ExternalLink, Play, Github } from 'lucide-react'
 
 interface Game {
   title: string
-  description: string
+  description: string | React.ReactNode
   image: string
   tags: string[]
   status: string
   github?: string
+  playUrl?: string
 }
 
 interface GameCardProps {
@@ -19,19 +21,6 @@ interface GameCardProps {
 }
 
 export default function GameCard({ game, index }: GameCardProps) {
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Released':
-        return 'bg-green-500/20 text-green-400 border-green-500/30'
-      case 'In Development':
-        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
-      case 'Coming Soon':
-        return 'bg-blue-500/20 text-blue-400 border-blue-500/30'
-      default:
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
-    }
-  }
-
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -47,58 +36,41 @@ export default function GameCard({ game, index }: GameCardProps) {
             className="w-full h-48 object-contain p-6 transition-transform duration-500 group-hover:scale-110"
             whileHover={{ scale: 1.1 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            className="absolute inset-0 flex items-center justify-center bg-background/50"
-          >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Button size="sm" className="bg-primary/20 backdrop-blur-sm border border-primary/30">
-                <Play className="mr-2" size={16} />
-                View Details
-              </Button>
-            </motion.div>
-          </motion.div>
-          <Badge 
-            className={`absolute top-4 right-4 ${getStatusColor(game.status)}`}
-          >
-            {game.status}
-          </Badge>
         </div>
         
         <CardContent className="p-6">
           <h3 className="cinzel text-xl font-bold mb-3 group-hover:text-primary transition-colors">
             {game.title}
           </h3>
-          <p className="grenze text-muted-foreground mb-4 leading-relaxed">
+          <p className="grenze text-muted-foreground mb-4 leading-relaxed h-16 overflow-hidden">
             {game.description}
           </p>
-          
-          <div className="flex flex-wrap gap-2 mb-4">
-            {game.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs">
-                {tag}
-              </Badge>
-            ))}
-          </div>
           
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
-              onClick={() => game.github && window.open(game.github, '_blank')}
-            >
-              <ExternalLink className="mr-2" size={16} />
-              View on GitHub
-            </Button>
+            {game.playUrl ? (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full group-hover:border-primary group-hover:text-primary transition-colors bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20"
+                onClick={() => window.open(game.playUrl, '_blank')}
+              >
+                <Play className="mr-2" size={16} />
+                Play Now!
+              </Button>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
+                onClick={() => game.github && window.open(game.github, '_blank')}
+              >
+                <Github className="mr-2" size={16} />
+                View on GitHub
+              </Button>
+            )}
           </motion.div>
         </CardContent>
       </Card>

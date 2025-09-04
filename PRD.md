@@ -90,6 +90,6 @@ Animations should be bold and fluid, creating moments of delight that showcase t
 - **States**: 
   - Buttons: default/hover with glow/active with scale/focus with pulse
   - Cards: default/hover with lift and glow/loading with skeleton
-- **Icon Selection**: Phosphor icons for technology, gaming, and contact elements
+- **Icon Selection**: Lucide icons for technology, gaming, and contact elements
 - **Spacing**: Generous padding (p-8, p-12) with consistent gaps (gap-6, gap-8) for premium feel
 - **Mobile**: Stack cards vertically, reduce animation complexity, maintain core visual hierarchy

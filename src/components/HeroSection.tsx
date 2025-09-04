@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { ArrowDown, Sparkle } from '@phosphor-icons/react'
+import { ChevronDown, Sparkles } from 'lucide-react'
 import Logo from '@/components/Logo'
 
 export default function HeroSection() {
+  const scrollToGames = () => {
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) {
+      gamesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       <div className="text-center z-10">
@@ -33,7 +40,7 @@ export default function HeroSection() {
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            LASERWOLVE
+            LASERWOLVE GAMES
           </motion.h1>
           <motion.div
             initial={{ width: 0 }}
@@ -41,15 +48,23 @@ export default function HeroSection() {
             transition={{ duration: 1.5, delay: 0.5 }}
             className="h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto mb-6 glow-blue"
           />
-          <motion.h2 
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="cinzel text-2xl md:text-3xl font-bold text-foreground/90"
-          >
-            GAMES
-          </motion.h2>
         </motion.div>
+
+        <motion.p
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="grenze text-xl md:text-2xl text-muted-foreground/80 max-w-2xl mx-auto mb-6 italic"
+        >
+          Making Games that People Want to Play
+        </motion.p>
+
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "60%" }}
+          transition={{ duration: 1.2, delay: 1.1 }}
+          className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-8"
+        />
 
         <motion.p
           initial={{ y: 30, opacity: 0 }}
@@ -74,8 +89,9 @@ export default function HeroSection() {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-primary to-accent hover:glow-orange transition-all duration-300 px-8 py-4 text-lg font-semibold"
+              onClick={scrollToGames}
             >
-              <Sparkle className="mr-2" size={24} />
+              <Sparkles className="mr-2" size={24} />
               Explore Our Games
             </Button>
           </motion.div>
@@ -88,8 +104,11 @@ export default function HeroSection() {
               variant="outline" 
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-8 py-4 text-lg font-semibold hover:glow-blue"
+              asChild
             >
-              Work With Us
+              <a href="mailto:Contact@LaserwolveGames.com">
+                Connect With Us
+              </a>
             </Button>
           </motion.div>
         </motion.div>
@@ -106,7 +125,7 @@ export default function HeroSection() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="text-primary cursor-pointer"
         >
-          <ArrowDown size={32} />
+          <ChevronDown size={32} />
         </motion.div>
       </motion.div>
 

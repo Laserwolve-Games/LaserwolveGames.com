@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GamepadIcon, Rocket, Users, Mail, Github, Twitter, Code2, Zap, Star } from '@phosphor-icons/react'
+import { Gamepad2, Rocket, Users, Mail, Github, Twitter, Code2, Zap, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -13,24 +13,67 @@ import TeamMember from '@/components/TeamMember'
 import Logo from '@/components/Logo'
 import DaggerQuestLogo from '@/assets/images/DaggerQuestLogo.webp'
 import PlainsOfShinarLogo from '@/assets/images/PlainsOfShinarLogo.webp'
+import CAFfeineLogo from '@/assets/images/caffieneLogo.webp'
+import OverlordLogo from '@/assets/images/overlordLogo.webp'
+import DaggerTestLogo from '@/assets/images/daggertestLogo.webp'
 
 function App() {
   const games = [
     {
       title: "DaggerQuest",
-      description: "A thrilling adventure RPG where heroes embark on epic quests with mystical daggers as their primary weapons",
+      description: "An old school hack n' slash Action Role-Playing Game (ARPG), playable in the browser.",
       image: DaggerQuestLogo,
       tags: ["RPG", "Adventure", "Fantasy"],
       status: "In Development",
-      github: "https://github.com/Laserwolve-Games/DaggerQuest"
+      playUrl: "https://DaggerQuest.com"
     },
     {
       title: "Plains of Shinar",
-      description: "An immersive strategy game set in ancient biblical lands, featuring city building and civilization management",
+      description: "A re-hash of DaggerQuest, built on a different tech stack and playable in a traditional desktop client.",
       image: PlainsOfShinarLogo,
       tags: ["Strategy", "Historical", "City Builder"],
       status: "In Development",
       github: "https://github.com/Laserwolve-Games/PlainsOfShinar"
+    }
+  ]
+
+  const tools = [
+    {
+      title: "CAFfeine",
+      description: "An automation framework for the Construct 3 Game Engine.",
+      image: CAFfeineLogo,
+      tags: ["Automation", "Testing", "Browser"],
+      status: "Active Development",
+      github: "https://github.com/Laserwolve-Games/CAFfeine"
+    },
+    {
+      title: "Overlord",
+      description: "A render pipeline management tool for creating assets for 2D games.",
+      image: OverlordLogo,
+      tags: ["Python", "3D Graphics", "Dashboard"],
+      status: "Active Development",
+      github: "https://github.com/Laserwolve-Games/Overlord"
+    },
+    {
+      title: "DaggerTest",
+      description: (
+        <>
+          An automated testing Framework for DaggerQuest and{' '}
+          <a 
+            href="https://DaggerQuest.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-primary hover:text-accent underline transition-colors"
+          >
+            DaggerQuest.com
+          </a>
+          .
+        </>
+      ),
+      image: DaggerTestLogo,
+      tags: ["Testing", "Framework", "Quality Assurance"],
+      status: "Active Development",
+      github: "https://github.com/Laserwolve-Games/DaggerTest"
     }
   ]
 
@@ -62,6 +105,7 @@ function App() {
       <HeroSection />
 
       <motion.section 
+        id="games"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -77,9 +121,6 @@ function App() {
             <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
               Our Games
             </h2>
-            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
-              Pushing the boundaries of interactive entertainment with cutting-edge technology and innovative gameplay
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -104,143 +145,15 @@ function App() {
             className="text-center mb-16"
           >
             <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
-              Our Services
+              Our Tools
             </h2>
-            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
-              From concept to completion, we deliver exceptional gaming experiences
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: GamepadIcon, title: "Game Development", desc: "Full-cycle game development from prototype to release" },
-              { icon: Code2, title: "Technical Consulting", desc: "Expert guidance on engine selection and optimization" },
-              { icon: Star, title: "Art & Design", desc: "Stunning visuals and immersive art direction" },
-              { icon: Zap, title: "Prototyping", desc: "Rapid prototyping to validate game concepts" },
-              { icon: Rocket, title: "Publishing", desc: "End-to-end publishing and marketing support" },
-              { icon: Users, title: "Team Augmentation", desc: "Skilled developers to enhance your team" }
-            ].map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="group hover:glow-blue transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm border-border/50">
-                  <CardContent className="p-8 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="inline-block p-4 rounded-full bg-primary/20 mb-6"
-                    >
-                      <service.icon size={32} className="text-primary" />
-                    </motion.div>
-                    <h3 className="cinzel text-xl font-bold mb-4">{service.title}</h3>
-                    <p className="grenze text-muted-foreground">{service.desc}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {tools.map((tool, index) => (
+              <GameCard key={tool.title} game={tool} index={index} />
             ))}
           </div>
-        </div>
-      </motion.section>
-
-      <motion.section 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative py-20 px-6"
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
-              Meet the Team
-            </h2>
-            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
-              Talented creators passionate about crafting extraordinary gaming experiences
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <TeamMember key={member.name} member={member} index={index} />
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative py-20 px-6"
-      >
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="cinzel text-4xl md:text-5xl font-bold mb-6 text-gradient">
-              Get In Touch
-            </h2>
-            <p className="grenze text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to bring your gaming vision to life? Let's create something extraordinary together
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Card className="glow-blue bg-card/80 backdrop-blur-sm border-border/50">
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="grenze font-medium text-sm mb-2 block">Name</label>
-                      <Input 
-                        placeholder="Your name" 
-                        className="bg-background/50 border-border/50 focus:border-primary focus:glow-blue"
-                      />
-                    </div>
-                    <div>
-                      <label className="grenze font-medium text-sm mb-2 block">Email</label>
-                      <Input 
-                        type="email" 
-                        placeholder="your@email.com" 
-                        className="bg-background/50 border-border/50 focus:border-primary focus:glow-blue"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="grenze font-medium text-sm mb-2 block">Project Details</label>
-                    <Textarea 
-                      placeholder="Tell us about your project..." 
-                      rows={5}
-                      className="bg-background/50 border-border/50 focus:border-primary focus:glow-blue"
-                    />
-                  </div>
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      className="w-full bg-gradient-to-r from-primary to-accent hover:glow-orange transition-all duration-300"
-                    >
-                      <Mail className="mr-2" size={20} />
-                      Send Message
-                    </Button>
-                  </motion.div>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
         </div>
       </motion.section>
 
@@ -257,8 +170,8 @@ function App() {
                 <h3 className="cinzel text-2xl font-bold text-gradient mb-2">
                   Laserwolve Games
                 </h3>
-                <p className="grenze text-muted-foreground">
-                  Crafting the future of gaming
+                <p className="grenze text-muted-foreground italic">
+                  Making Games that People Want to Play
                 </p>
               </div>
             </motion.div>
@@ -269,9 +182,8 @@ function App() {
               className="flex gap-4"
             >
               {[
-                { icon: Github, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Mail, href: "#" }
+                { icon: Github, href: "https://github.com/Laserwolve-Games" },
+                { icon: Mail, href: "mailto:contact@laserwolvegames.com" }
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -293,7 +205,16 @@ function App() {
             whileInView={{ opacity: 1 }}
             className="text-center text-muted-foreground grenze text-sm"
           >
-            © 2024 Laserwolve Games. All rights reserved.
+            © 2025 Laserwolve Games. Licensed under the{' '}
+            <a 
+              href="https://github.com/Laserwolve-Games/LaserwolveGames.com?tab=MIT-1-ov-file"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-accent underline transition-colors"
+            >
+              MIT License
+            </a>
+            .
           </motion.div>
         </div>
       </footer>

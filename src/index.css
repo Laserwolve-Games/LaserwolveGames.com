@@ -130,6 +130,13 @@
   background-clip: text;
 }
 
+.hover\:text-gradient:hover {
+  background: linear-gradient(135deg, oklch(0.6 0.25 240), oklch(0.75 0.2 45));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }

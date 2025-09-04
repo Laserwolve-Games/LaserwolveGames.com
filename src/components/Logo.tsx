@@ -10,7 +10,6 @@ export default function Logo({ size = 120, className = "" }: LogoProps) {
   return (
     <motion.div 
       className={`inline-block ${className}`}
-      whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.2 }}
       style={{
         width: size,

@@ -28,13 +28,13 @@ export default function GameCard({ game, index }: GameCardProps) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -10 }}
     >
-      <Card className="group overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 hover:glow-blue transition-all duration-500 hover:scale-105">
+      <Card className="group overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 hover:glow-blue transition-all duration-500 hover:scale-[1.02]">
         <div className="relative overflow-hidden bg-muted/20">
           <motion.img
             src={game.image}
             alt={game.title}
-            className="w-full h-48 object-contain p-6 transition-transform duration-500 group-hover:scale-110"
-            whileHover={{ scale: 1.1 }}
+            className="w-full h-48 object-contain p-6 transition-transform duration-500 group-hover:scale-[1.05]"
+            whileHover={{ scale: 1.02 }}
           />
         </div>
         
@@ -54,21 +54,25 @@ export default function GameCard({ game, index }: GameCardProps) {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="w-full group-hover:border-primary group-hover:text-primary transition-colors bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20"
-                onClick={() => window.open(game.playUrl, '_blank')}
+                className="w-full group-hover:border-primary hover:text-gradient transition-colors bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20"
+                asChild
               >
-                <Play className="mr-2" size={16} />
-                Play Now!
+                <a href={game.playUrl} target="_blank" rel="noopener noreferrer">
+                  <Play className="mr-2" size={16} />
+                  Play Now!
+                </a>
               </Button>
             ) : (
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
-                onClick={() => game.github && window.open(game.github, '_blank')}
+                className="w-full group-hover:border-primary hover:text-gradient transition-colors bg-gradient-to-r from-primary/10 to-accent/10 hover:from-primary/20 hover:to-accent/20"
+                asChild
               >
-                <Github className="mr-2" size={16} />
-                View on GitHub
+                <a href={game.github} target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2" size={16} />
+                  View on GitHub
+                </a>
               </Button>
             )}
           </motion.div>

@@ -8,7 +8,7 @@ This is the official website for Laserwolve Games. It is built with modern web t
 *   **Build Tool**: [Vite](https://vitejs.dev/)
 *   **Language**: [TypeScript](https://www.typescriptlang.org/)
 *   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-*   **Component Library**: [@github/spark](https://github.com/github/spark)
+*   **UI Components**: [Radix UI](https://www.radix-ui.com/)
 
 ## 🛠️ Development
 

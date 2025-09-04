@@ -17,6 +17,7 @@ export default defineConfig({
       '@': resolve(projectRoot, 'src')
     }
   },
+  publicDir: 'public',
   build: {
     outDir: 'docs'
   },

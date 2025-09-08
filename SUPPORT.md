@@ -164,7 +164,7 @@ You can help improve support for everyone:
 ### Our Games
 
 - **DaggerQuest**: [Main game](https://daggerquest.com) | [Repository](https://github.com/Laserwolve-Games/DaggerQuest)
-- **Plains of Shinar**: [2D ARPG](https://plainsofshinar.com) | [Repository](https://github.com/Laserwolve-Games/PlainsOfShinar)
+- **Plains of Shinar**: [Desktop ARPG](https://github.com/Laserwolve-Games/PlainsOfShinar) | [Repository](https://github.com/Laserwolve-Games/PlainsOfShinar)
 
 ## Business Inquiries
 
